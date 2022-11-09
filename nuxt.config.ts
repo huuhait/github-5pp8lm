@@ -17,17 +17,11 @@ export default defineNuxtConfig({
   },
   nitro: {
     devProxy: {
-      '/proxy/test': 'http://localhost:3001',
-      '/proxy/example': {
-        target: 'https://api.albionstatus.com/',
-        prependPath: true,
-        changeOrigin: true,
-      },
       '/api/v2': {
-        target: 'http://demo.zsmartex.com/',
-        prependPath: true,
+        target: 'https://demo.zsmartex.com/api/v2/',
         changeOrigin: true,
+        ws: true,
       },
-    }
-  }
+    },
+  },
 })
